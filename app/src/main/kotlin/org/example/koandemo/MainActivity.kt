@@ -11,6 +11,11 @@ class MainActivity: Activity() {
   override fun onCreate(savedInstanceState: Bundle?) {
     super<Activity>.onCreate(savedInstanceState)
 
+    val customStyle = { (v: Any) -> when(v) {
+      is Button -> v.textSize = 26f
+      is EditText -> v.textSize = 24f
+    }}
+
     verticalLayout {
       padding = dip(32)
 
@@ -21,19 +26,16 @@ class MainActivity: Activity() {
 
       val name = editText {
         hint = "Name"
-        textSize = 24f
       }
       val password = editText {
         hint = "Password"
-        textSize = 24f
       }
       button("Login") {
-        textSize = 26f
         onClick {
           tryLogin(name.text, password.text)
         }
       }
-    }
+    }.style(customStyle)
   }
 
   private fun tryLogin(name: CharSequence?, password: CharSequence?) {
