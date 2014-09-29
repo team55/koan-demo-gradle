@@ -5,25 +5,24 @@ buildscript {
     mavenCentral()
   }
   dependencies {
-    classpath 'com.android.tools.build:gradle:0.12.+'
+    classpath 'com.android.tools.build:gradle:0.10.+'
     classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
   }
 }
-apply plugin: 'com.android.application'
+apply plugin: 'android'
 apply plugin: 'kotlin-android'
 
 repositories {
   mavenCentral()
   //Repository with Koan
-  maven { url "http://repo.yanex.org/maven2" }
+  maven { url "http://dl.bintray.com/yanex/kotlin" }
 }
 
 android {
-  compileSdkVersion 20
+  compileSdkVersion 19
   buildToolsVersion "19.1.0"
 
   defaultConfig {
-    applicationId "com.example.koandemo"
     minSdkVersion 14
     targetSdkVersion 19
     versionCode 1
@@ -45,7 +44,7 @@ android {
 dependencies {
   compile fileTree(dir: 'libs', include: ['*.jar'])
   //Version 0.1 for Android API version 19. Use 19s-0.1 if you use android.support.v4
-  compile 'org.jetbrains.kotlin:koan:19-0.1'
+  compile 'org.jetbrains.kotlin:koan:19-0.1@aar'
   //Kotlin standard library
   compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 }
