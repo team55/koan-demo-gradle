@@ -25,10 +25,10 @@ class MainActivity: Activity() {
       }
 
       val name = editText {
-        hint = "Name"
+        hintResource = R.string.name
       }
       val password = editText {
-        hint = "Password"
+        hintResource = R.string.password
       }
       button("Login") {
         onClick {
