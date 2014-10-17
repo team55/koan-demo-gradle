@@ -1,15 +1,15 @@
 buildscript {
-  ext.kotlin_version = '0.8.11'
+  ext.kotlin_version = '0.9.66'
 
   repositories {
     mavenCentral()
   }
   dependencies {
-    classpath 'com.android.tools.build:gradle:0.10.+'
+    classpath 'com.android.tools.build:gradle:0.12.2'
     classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
   }
 }
-apply plugin: 'android'
+apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
 repositories {
@@ -43,8 +43,8 @@ android {
 
 dependencies {
   compile fileTree(dir: 'libs', include: ['*.jar'])
-  //Version 0.1 for Android API version 19. Use 19s-0.1 if you use android.support.v4
-  compile 'org.jetbrains.kotlin:koan:19-0.1@aar'
+  //Version 0.1 for Android API version 19. Use 19s-0.1.2 if you use android.support.v4
+  compile 'org.jetbrains.kotlin:koan:19-0.1.2@aar'
   //Kotlin standard library
   compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 }
